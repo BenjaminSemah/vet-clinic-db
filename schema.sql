@@ -15,3 +15,29 @@ CREATE TABLE animals(
 -- Add a column `species` of type string to the animals table
 ALTER TABLE animals
 ADD COLUMN species VARCHAR(250);
+
+-- Create a table named owners
+CREATE TABLE owners(
+    id              INT GENERATED ALWAYS AS IDENTITY,
+    full_name       VARCHAR(250),
+    age             INT,
+    PRIMARY KEY(id)
+);
+
+-- Create a new table named species
+CREATE TABLE species(
+    id              INT GENERATED ALWAYS AS IDENTITY,
+    name            VARCHAR(250),
+    PRIMARY KEY(id)
+);
+
+-- Remove species column from animals table
+ALTER TABLE animals DROP COLUMN species;
+
+-- Add foreign key for species in animals table
+ALTER TABLE animals
+ADD species_id INT REFERENCES species (id);
+
+-- Add foreign key for owners in animals table
+ALTER TABLE animals
+ADD owner_id INT REFERENCES owners (id);
