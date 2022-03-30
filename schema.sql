@@ -11,3 +11,7 @@ CREATE TABLE animals(
     weight_kg        DECIMAL,
     PRIMARY KEY(id)  
 );
+
+-- Add a column `species` of type string to the animals table
+ALTER TABLE animals
+ADD COLUMN species VARCHAR(250);
