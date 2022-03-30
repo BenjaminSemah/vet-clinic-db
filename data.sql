@@ -54,3 +54,4 @@ UPDATE animals
 UPDATE animals
   SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
   WHERE name IN ('Angemon', 'Boarmon');
+
