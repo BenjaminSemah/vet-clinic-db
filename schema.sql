@@ -13,8 +13,7 @@ CREATE TABLE animals(
 );
 
 -- Add a column `species` of type string to the animals table
-ALTER TABLE animals
-ADD COLUMN species VARCHAR(250);
+ALTER TABLE animals ADD COLUMN species VARCHAR(250);
 
 -- Create a table named owners
 CREATE TABLE owners(
@@ -41,3 +40,12 @@ ADD species_id INT REFERENCES species (id);
 -- Add foreign key for owners in animals table
 ALTER TABLE animals
 ADD owner_id INT REFERENCES owners (id);
+
+-- creat vets table
+CREATE TABLE vets(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    date_of_graduation date NOT NULL,
+    PRIMARY KEY(id)
+);
