@@ -55,3 +55,15 @@ UPDATE animals
   SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
   WHERE name IN ('Angemon', 'Boarmon');
 
+-- Insert data into vets table
+INSERT INTO vets (name,age,date_of_graduation)
+VALUES ('William Tatcher', 45 , '2000-4-23');
+
+INSERT INTO vets (name,age,date_of_graduation)
+VALUES ('Maisy Smith', 26 , '2019-01-17');
+
+INSERT INTO vets (name,age,date_of_graduation)
+VALUES ('Stephanie Mendez', 64 , '1981-05-14');
+
+INSERT INTO vets (name,age,date_of_graduation)
+VALUES ('Jack Harkness', 38 , '2008-06-18');
