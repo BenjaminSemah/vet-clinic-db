@@ -67,3 +67,14 @@ VALUES ('Stephanie Mendez', 64 , '1981-05-14');
 
 INSERT INTO vets (name,age,date_of_graduation)
 VALUES ('Jack Harkness', 38 , '2008-06-18');
+
+-- Insert data into specialization table
+INSERT INTO specializations (species_id, vet_id) 
+VALUES (1,(SELECT id FROM vets WHERE name = 'William Tatcher'));
+
+INSERT INTO specializations (species_id, vet_id) 
+VALUES (1,(SELECT id FROM vets WHERE name = 'Stephanie Mendez')), (2,(SELECT id FROM vets WHERE name = 'Stephanie Mendez'));
+
+INSERT INTO specializations (species_id, vet_id) 
+VALUES (2,(SELECT id FROM vets WHERE name = 'Jack Harkness'));
+
