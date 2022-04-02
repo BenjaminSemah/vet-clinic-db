@@ -106,4 +106,3 @@ VALUES((SELECT id from animals where name='Squirtle'),(SELECT id from vets where
 ((SELECT id from animals where name='Boarmon'),(SELECT id from vets where name='Maisy Smith'),'2020-08-03'),
 ((SELECT id from animals where name='Blossom'),(SELECT id from vets where name='Stephanie Mendez'),'2020-05-24'),
 ((SELECT id from animals where name='Blossom'),(SELECT id from vets where name='William Tatcher'),'2021-01-11');
-
