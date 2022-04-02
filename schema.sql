@@ -41,7 +41,7 @@ ADD species_id INT REFERENCES species (id);
 ALTER TABLE animals
 ADD owner_id INT REFERENCES owners (id);
 
--- creat vets table
+-- Create vets table
 CREATE TABLE vets(
     id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(100) NOT NULL,
@@ -49,3 +49,13 @@ CREATE TABLE vets(
     date_of_graduation date NOT NULL,
     PRIMARY KEY(id)
 );
+
+-- Create specialization table (join table)
+CREATE TABLE specializations(
+    species_id INT NOT NULL,
+    vet_id INT NOT NULL,
+    FOREIGN KEY (species_id) REFERENCES species (id),
+    FOREIGN KEY (vet_id) REFERENCES vets (id)
+);
+
+
